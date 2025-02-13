@@ -15,4 +15,7 @@ function take
     mkdir -p "$argv[1]"; and cd "$argv[1]"
 end
 
-funcsave take
+if set -q VIRTUAL_ENV
+    echo -n -s (set_color -b blue white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
+end
+
