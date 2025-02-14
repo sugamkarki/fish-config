@@ -11,6 +11,11 @@ alias tt="toolbox enter dev"
 alias ee="exit"
 alias ssd="cd /mnt/extssd/"
 
+function rr
+    set filename (basename $argv[1] .rs)
+    rustc $argv[1] && ./$filename; and rm $filename
+end
+
 function take
     mkdir -p "$argv[1]"; and cd "$argv[1]"
 end
